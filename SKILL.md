@@ -109,9 +109,25 @@ API 密钥已内置于脚本中，无需额外配置。
 
 ---
 
+## Slash 命令
+
+| 命令 | 功能 |
+|------|------|
+| `/portfolio show` | 查看当前持仓和现金 |
+| `/portfolio add <代码> <名称> <份数> <成本价>` | 添加持仓 |
+| `/portfolio remove <代码>` | 移除持仓 |
+| `/portfolio cash <金额>` | 更新现金余额 |
+| `/portfolio alert <代码> <类型> <阈值>` | 添加预警 |
+
+## 自动化
+
+- **SessionStart 钩子**：每次打开 ZCode 自动检查持仓和 API 状态
+- **预警系统**：定时检查溢价/回撤是否触发阈值
+
 ## 实现说明
 
-- 数据源：东方财富妙想 API（mx-finance-data + mx-stocks-screener）
+- 数据源：东方财富妙想 API
+- 状态存储：`~/.zcode/portfolio.json`（跨会话持久化）
 - 诊断流程：拉指标 → 拉排名 → 拉宏观 → 生成报告
 - 扫描流程：6 维度并行筛选 → 去重 → 多因子评分 → 排序输出
 - 交易所覆盖：上交所（SH）、深交所（SZ）
