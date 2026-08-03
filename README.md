@@ -48,7 +48,7 @@
 
 ```bash
 # 克隆到 ZCode skills 目录
-git clone https://github.com/<your-username>/etf-diagnosis-skill.git ~/.agents/skills/etf-diagnosis
+git clone https://github.com/mazihua-lgtm/etf-diagnosis-skill.git ~/.agents/skills/etf-diagnosis
 ```
 
 ### 使用
